@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="col-md-4">
+    <a class="btn btn-block btn-lg btn-success" href="/main/credit" data-remote="true">
+      <i style="font-size: 1.5em"> <%= local_currency(@summaries['Credit'].blank? ? 0 : @summaries['Credit']) %></i> <br><br>
+      <span class="texto_grande"><i class="fa fa-plus-circle"></i> Credits</span></a>
+  </div>
+  <div class="col-md-4">
+    <a class="btn btn-block btn-lg btn-danger" href="/main/debit" data-remote="true">
+      <i style="font-size: 1.5em"> <%= local_currency(@summaries['Debit'].blank? ? 0 : @summaries['Debit']) %></i> <br><br>
+      <span class="texto_grande"><i class="fa fa-times-circle-o"></i> Debits</span></a>
+  </div>
+  <div class="col-md-4">
+    <a class="btn btn-block btn-lg btn-primary" data-toggle="modal" data-target="#mymodal">
+      <i style="font-size: 1.5em"> <%= local_currency((@summaries['Debit'].blank? ? 0 : @summaries['Debit']) - (@summaries['Credit'].blank? ? 0 : @summaries['Credit']) ) %></i> <br><br>
+      <span class="texto_grande"><i class="fa fa-edit"></i> Balance</span></a>
+  </div>
+</div>
